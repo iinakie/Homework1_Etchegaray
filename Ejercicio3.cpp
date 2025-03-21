@@ -7,7 +7,7 @@ using namespace std;
 /*
 Escribir en la consola: 
         g++ -o Ejercicio3 Ejercicio3.cpp (enter)
-        ./Ejercicio3(enter)
+         ./Ejercicio3(enter)
 */
 
 struct Node{
