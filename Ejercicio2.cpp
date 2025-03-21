@@ -10,6 +10,17 @@ Escribir en la consola:
         ./Ejercicio2(enter)
 */
 
+// Explicacion de mi codigo:
+/*
+En este código tengo varias funciones para registrar mensajes en un archivo. La primera función recibe un mensaje y un nivel de severidad,
+y dependiendo del nivel (de 0 a 4), el programa tira como [DEBUG], [INFO], [WARNING], [ERROR] o [CRITICAL] y luego lo escribe el mensaje
+en un archivo. La segunda función registra un mensaje de error, indicando en qué archivo y línea ocurrió. La tercera función registra un
+intento de acceso al programa, pidiendo si el usuario quiere acceder y su nombre de usuario, si la respuesta es válida (si o no) se registra
+en el archivo, si no, se muestra un error en la consola. En el `main`, hice un especie demenú donde el usuario puede elegir entre estas opciones 
+y se registran los mensajes en el archivo correspondiente. Si el usuario elige una opción incorrecta, lanza un error, lo captura y lo guarda
+en el archivo indicando el error, el archivo y la línea donde ocurrió.
+*/
+
 void logMessage(string mensaje, int NivelSeveridad){
     ofstream archivo("archivo_salida.txt", ios::app);
 
