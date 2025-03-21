@@ -10,6 +10,19 @@ Escribir en la consola:
          ./Ejercicio3(enter)
 */
 
+// Explicacion de mi codigo:
+/*
+En este codigo uso los punteros inteligentes para hacer listas enlazadas. Primero determino la estructura que va a tener mi nodo,
+luego hago la funcion que crea a mi nodo(es llamada en cada funcion) y despues ya empiezo con las funciones para implementar en mi lista. 
+En la push_front simplemente creo un nodo y hago que el nuevo nodo apunte al head y luego el head sea el nuevo nodo. En la push_back algo
+similar pero al final de la lista, me fijo si esta vacia y si es asi lo creo y si no, creo un current donde lo itero hasta llegar al final
+y a ese le asigno como ->next el nuevo nodo. En la de insert lo que hago es itero sobre un current y lo pongo en la posicion deseada y si la
+poscicion es mas grande que la lista lo iserto al final. En la de erase tambien itero sobre un current y a la hora de eliminar lo que hago es 
+le asigno el ->next->next del current(ya que el current es el anterior al que quiero eliminar) y si esta vacia no hace nada. Por ultimo,
+la que hace el print de la lista va iterando sobre un current y lo imprime y entre medio de cada uno poneuna "->" hasta el  ultimo current.
+*/
+
+
 struct Node{
     int value;
     shared_ptr<Node> next;
@@ -97,18 +110,18 @@ void print_list(const shared_ptr<Node> &head){
 int main() {
     shared_ptr<Node> head = nullptr;
 
-    push_front(head, 1); // Inserto el primer elemento de la lista
-    push_front(head, 20); // Inserto al frente del primero
-    push_back(head, 99);  // Inserto al final de la lista
-    insert(head, 25, 3);  // Inserto en la posición 3
-    insert(head, 24, 4);  // Inserto en la posición 4
-    insert(head, 5, 30);  // Insertar en una posición mayor al largo
+    push_front(head, 1);                                          // Inserto el primer elemento de la lista
+    push_front(head, 20);                                         // Inserto al frente del primero
+    push_back(head, 99);                                          // Inserto al final de la lista
+    insert(head, 25, 3);                                          // Inserto en la posición 3
+    insert(head, 24, 4);                                          // Inserto en la posición 4
+    insert(head, 5, 30);                                          // Insertar en una posición mayor al largo
 
     cout << "Lista después de inserciones: ";
     print_list(head);
 
-    erase(head, 3);  // Borrar el nodo en la posición 3
-    erase(head, 30); // Borrar en una posición mayor al largo de la lista
+    erase(head, 3);                                               // Borro el nodo en la posición 3
+    erase(head, 30);                                              // Borro en una posición mayor al largo 
 
     cout << "Lista después de borrados: ";
     print_list(head);
