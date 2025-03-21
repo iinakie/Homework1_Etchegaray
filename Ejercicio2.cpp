@@ -122,7 +122,7 @@ int main(){
                 break;
             } 
             else {
-                throw runtime_error("¡Error de prueba detectado! Forzando cierre del programa...");
+                throw runtime_error("¡Error detectado! Forzando cierre del programa...");
             }
         }
     }

@@ -1,0 +1,1 @@
+El mensaje:¡Error de prueba detectado! Forzando cierre del programa... del archivo:main.cpp, ha sido encontrado en la linea:130
